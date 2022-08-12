@@ -9,12 +9,7 @@ export default class Api {
     Array.from(form.elements)
       .filter((e) => e.name === 'title' || e.name === 'description')
       .forEach((e) => {
-        if (e.name === 'title') {
-          params.append('name', `${e.value}`);
-        }
-        if (e.name === 'description') {
-          params.append('description', `${e.value}`);
-        }
+        params.append(e.name, `${e.value}`);
       });
     this.options = {
       method: 'POST',
@@ -56,12 +51,7 @@ export default class Api {
     Array.from(form.elements)
       .filter((e) => e.name === 'title' || e.name === 'description')
       .forEach((e) => {
-        if (e.name === 'title') {
-          params.append('name', `${e.value}`);
-        }
-        if (e.name === 'description') {
-          params.append('description', `${e.value}`);
-        }
+        params.append(e.name, `${e.value}`);
       });
     params.append('id', id);
     this.options = {
